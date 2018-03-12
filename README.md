@@ -581,7 +581,6 @@ function find(arr, func) {
 
 最后返回数组的剩余部分，如果没有剩余，就返回一个空数组。
 
-如果你被卡住了，记得开大招 Read-Search-Ask。尝试与他人结伴编程。编写你自己的代码。
 ```
 function drop(arr, func) {
 for(var i=0;i<arr.length;i++){
