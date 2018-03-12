@@ -5,8 +5,8 @@ FreeCodeCamp 基础+中级 算法
 
 ```function reverseString(str) {
   return str.split("").reverse().join("");
-}```
-
+}
+```
 #### 计算一个整数的阶乘
 
 ```function factorialize(num) {
@@ -16,8 +16,8 @@ FreeCodeCamp 基础+中级 算法
   else{
     return factorialize(num - 1) * num;
   }
-}```
-
+}
+```
 ### 检查回文字符串
 ```function palindrome(str) {
 
@@ -25,6 +25,6 @@ FreeCodeCamp 基础+中级 算法
   var prestr=str.replace(reg,"").toLowerCase();
   var currstr=prestr.split("").reverse().join("");
   return currstr==prestr?true:false;
-}```
-
+}
+```
 
