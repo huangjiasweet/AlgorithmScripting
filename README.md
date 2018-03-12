@@ -1,14 +1,14 @@
 # AlgorithmScripting
 FreeCodeCamp 基础+中级 算法
 
-#### 翻转字符串
+#### 1.翻转字符串
 
 ```
 function reverseString(str) {
   return str.split("").reverse().join("");
 }
 ```
-#### 计算一个整数的阶乘
+#### 2.计算一个整数的阶乘
 
 ```
 function factorialize(num) {
@@ -20,72 +20,58 @@ function factorialize(num) {
   }
 }
 ```
-#### 检查回文字符串
+#### 3.检查回文字符串
 ```
 function palindrome(str) {
-
   var reg=/[^0-9a-z]/gi;
   var prestr=str.replace(reg,"").toLowerCase();
   var currstr=prestr.split("").reverse().join("");
   return currstr==prestr?true:false;
 }
 ```
-#### 找出最长单词，并返回它的长度。
+#### 4.找出最长单词，并返回它的长度。
 ```
 function findLongestWord(str) {
- 
-  var strArr=str.split(" ").map(function(val){return val.length;}).sort(function(a,b){return b-a;});
+   var strArr=str.split(" ").map(function(val){return val.length;}).sort(function(a,b){return b-a;});
   var strNum=strArr[0];
-  return strNum;
- 
-  
-  
-
- 
+  return strNum; 
 }
 ```
-#### 单词首字母大写
+#### 5.单词首字母大写
 ```
 function titleCase(str) {
-  // 请把你的代码写在这里
   var upStr=str.split(" ").map(function(val){
     var a=val.toLowerCase().split("");
     a[0]=a[0].toUpperCase();
     return a.join("");
   }).join(" ");
-  return upStr;
-  
+  return upStr;  
 }
 
 ```
-#### 找出多个数组中的最大数,然后把它们串联起来，形成一个新数组。
+#### 6.找出多个数组中的最大数,然后把它们串联起来，形成一个新数组。
 ```
 function largestOfFour(arr) {
-  // 请把你的代码写在这里
   var Arr=[];
   for(var i=0;i<arr.length;i++){
   Arr[i]=arr[i].sort(function(a,b){
      return a-b;
    }).pop();
-    
-    
   }
   return Arr;
 }
  
 ```
-#### 检查字符串结尾，判断一个字符串(str)是否以指定的字符串(target)结尾。
+#### 7.检查字符串结尾，判断一个字符串(str)是否以指定的字符串(target)结尾。
 ```
 function confirmEnding(str, target) {
-  // 请把你的代码写在这里
   return str.substr(-target.length) == target;
 }
 
 ```
-#### 重复输出字符串，重复一个指定的字符串 num次，如果num是一个负数则返回一个空字符串。
+#### 8.重复输出字符串，重复一个指定的字符串 num次，如果num是一个负数则返回一个空字符串。
 ```
 function repeat(str, num) {
-  // 请把你的代码写在这里
   var str1=str;
  if(num>0){
    for(var i=1; i<num; i++){
@@ -99,7 +85,7 @@ function repeat(str, num) {
 }
 
 ```
-#### 截断字符串
+#### 9.截断字符串
 
 （用瑞兹来截断对面的退路）
 
@@ -110,8 +96,6 @@ function repeat(str, num) {
 但是，如果指定的参数num小于或等于3，则添加的三个点号不会计入字符串的长度。
 ```
 function truncate(str, num) {
-  // 请把你的代码写在这里
-
 if(num>=str.length){
   return str;
 }
@@ -124,42 +108,37 @@ if(num>=str.length){
 }
 
 ```
-#### 猴子吃香蕉, 分割数组
+#### 10.猴子吃香蕉, 分割数组
 
 （猴子吃香蕉可是掰成好几段来吃哦）
 
 把一个数组arr按照指定的数组大小size分割成若干个数组块。
 ```
 function chunk(arr, size) {
-  // 请把你的代码写在这里
 var len=0;
   var arr1=[];
   while(len<arr.length){
     arr1.push(arr.slice(len,len+=size));
   }
-
 return arr1;
 }
 
 ```
-#### 截断数组
+#### 11.截断数组
 
 返回一个数组被截断n个元素后还剩余的元素，截断从索引0开始。
 ```
 function slasher(arr, howMany) {
-  // 请把你的代码写在这里
-return arr.splice(howMany);
+    return arr.splice(howMany);
 }
 ```
-#### 比较字符串
+#### 12.比较字符串
 
 （蛤蟆可以吃队友，也可以吃对手）
 
 如果数组第一个字符串元素包含了第二个字符串元素的所有字符，函数返回true。
 ```
 function mutation(arr) {
-  // 请把你的代码写在这里
-
 var lowerStr1 = arr[0].toLowerCase();
   var lowerStr2 = arr[1].toLowerCase();
   var str2Arr = lowerStr2.split("");
@@ -172,7 +151,7 @@ return true;
 }
 
 ```
-#### 过滤数组假值
+#### 13.过滤数组假值
 
 （真假美猴王）
 
@@ -181,22 +160,18 @@ return true;
 在JavaScript中，假值有false、null、0、""、undefined 和 NaN。
 ```
 function bouncer(arr) {
-  // 请把你的代码写在这里
-
-  
   return arr.filter(function(val){
     return val;
   });
 }
 ```
-#### 摧毁数组
+#### 14.摧毁数组
 
 金克斯的迫击炮！
 
 实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。
 ```
 function destroyer(arr) {
-  // 请把你的代码写在这里
 var args=[];
   for(var i=1;i<arguments.length;i++){
     args.push(arguments[i]);
@@ -205,17 +180,15 @@ var args=[];
    return args.indexOf(val)==-1;
  });
   return arr1;
-
 }
 ```
-#### 数组排序并找出元素索引
+#### 15.数组排序并找出元素索引
 
 我身在何处？
 
 先给数组排序，然后找到指定的值在数组的位置，最后返回位置对应的索引。
 ```
 function where(arr, num) {
-  // 请把你的代码写在这里
 arr.push(num);
   var arr1=arr.sort(function(a,b){
     return a-b;
@@ -227,7 +200,7 @@ arr.push(num);
  }
 }
 ```
-####凯撒密码
+#### 16.凯撒密码
 
 （让上帝的归上帝，凯撒的归凯撒）
 
@@ -236,7 +209,6 @@ arr.push(num);
 移位密码也就是密码中的字母会按照指定的数量来做移位。 
 ```
 function rot13(str) { // LBH QVQ VG!
-  // 请把你的代码写在这里
  var arr=str.split("");
   var str1=[];
   for(var i=0;i<arr.length;i++){
@@ -253,7 +225,7 @@ function rot13(str) { // LBH QVQ VG!
 }
  
 ```
-#### 我们会传递给你一个包含两个数字的数组。返回这两个数字和它们之间所有数字的和。
+#### 17.我们会传递给你一个包含两个数字的数组。返回这两个数字和它们之间所有数字的和。
 
 最小的数字并非总在最前面。
 ```
@@ -270,7 +242,7 @@ function sumAll(arr) {
 }
 
 ```
-#### 比较两个数组，然后返回一个新数组，该数组的元素为两个给定数组中所有独有的数组元素。换言之，返回两个数组的差异。
+#### 18.比较两个数组，然后返回一个新数组，该数组的元素为两个给定数组中所有独有的数组元素。换言之，返回两个数组的差异。
 ```
 function diff(arr1, arr2) {
 var newArr1=arr1.filter(function(val){
@@ -283,7 +255,7 @@ var newArr1=arr1.filter(function(val){
 
 }
 ```
-#### 将给定的数字转换成罗马数字。
+#### 19.将给定的数字转换成罗马数字。
 ```
 function convert(num) {
  var nums=[1000,900,500,400,100,90,50,40,10,9,5,4,1] ;
@@ -299,7 +271,7 @@ function convert(num) {
   return str.toUpperCase();
 }
 ```
-#### 写一个 function，它遍历一个对象数组（第一个参数）并返回一个包含相匹配的属性-值对（第二个参数）的所有对象的数组。如果返回的数组中包含 source 对象的属性-值对，那么此对象的每一个属性-值对都必须存在于 collection 的对象中。
+#### 20.写一个 function，它遍历一个对象数组（第一个参数）并返回一个包含相匹配的属性-值对（第二个参数）的所有对象的数组。如果返回的数组中包含 source 对象的属性-值对，那么此对象的每一个属性-值对都必须存在于 collection 的对象中。
 ```
 function where(collection, source) {
 var arr = [];
@@ -319,14 +291,10 @@ var arr = [];
   }
  }
      }
-  return arr;
-
-
-
-  
+  return arr;  
 }
 ```
-#### 使用给定的参数对句子执行一次查找和替换，然后返回新句子。
+#### 21.使用给定的参数对句子执行一次查找和替换，然后返回新句子。
 
 第一个参数是将要对其执行查找和替换的句子。
 
@@ -337,9 +305,6 @@ var arr = [];
 注意：替换时保持原单词的大小写。例如，如果你想用单词 "dog" 替换单词 "Book" ，你应该替换成 "Dog"。
 ```
 function myReplace(str, before, after) {
- 
-
-
   if(before[0] === before[0].toUpperCase()){
     after = after[0].toUpperCase() + after.slice(1);
     
@@ -349,14 +314,13 @@ function myReplace(str, before, after) {
 }
 
 ```
-#### 把指定的字符串翻译成 pig latin。
+#### 22.把指定的字符串翻译成 pig latin。
 
 Pig Latin 把一个英文单词的第一个辅音或辅音丛（consonant cluster）移到词尾，然后加上后缀 "ay"。
 
 如果单词以元音开始，你只需要在词尾添加 "way" 就可以了。
 ```
 function translate(str) {
-
 var a = str.search(/[aeiou]/);
             var str2 = str;
             if (a === 0) {
@@ -367,13 +331,9 @@ var a = str.search(/[aeiou]/);
                 str2 += "ay";
             }
             return str2;
-       
-
-
-
 }
 ```
-#### DNA 链缺少配对的碱基。依据每一个碱基，为其找到配对的碱基，然后将结果作为第二个数组返回。
+#### 23.DNA 链缺少配对的碱基。依据每一个碱基，为其找到配对的碱基，然后将结果作为第二个数组返回。
 
 Base pairs（碱基对） 是一对 AT 和 CG，为给定的字母匹配缺失的碱基。
 
@@ -398,20 +358,14 @@ function pair(str) {
         pair = 'G';
         break;
       case 'G':
-        pair = 'C';
-           
+        pair = 'C';      
     }
     return [val,pair];
   });
   return result;
-  
-  
-    
-
-
 }
 ```
-#### 从传递进来的字母序列中找到缺失的字母并返回它。
+#### 24.从传递进来的字母序列中找到缺失的字母并返回它。
 
 如果所有字母都在序列中，返回 undefined。
 ```
@@ -431,7 +385,7 @@ var sub;
 }
 
 ```
-#### 检查一个值是否是基本布尔类型，并返回 true 或 false。
+#### 25.检查一个值是否是基本布尔类型，并返回 true 或 false。
 
 基本布尔类型即 true 和 false。
 ```
@@ -440,11 +394,10 @@ function boo(bool) {
     return true;
   }
   return false;
-
 }
 
 ```
-#### 写一个 function，传入两个或两个以上的数组，返回一个以给定的原始数组排序的不包含重复值的新数组。
+#### 26.写一个 function，传入两个或两个以上的数组，返回一个以给定的原始数组排序的不包含重复值的新数组。
 
 换句话说，所有数组中的所有值都应该以原始顺序被包含在内，但是在最终的数组中不包含重复值。
 
@@ -465,7 +418,7 @@ return newArr;
 }
 
 ```
-#### 将字符串中的字符 &、<、>、" （双引号）, 以及 ' （单引号）转换为它们对应的 HTML 实体。
+#### 27.将字符串中的字符 &、<、>、" （双引号）, 以及 ' （单引号）转换为它们对应的 HTML 实体。
 ```
 function convert(str) {
   var arr=str.split("");
@@ -490,13 +443,9 @@ function convert(str) {
   }
   str=arr.join("");
   return str;
-
-
-
-
 }
 ```
-#### 将字符串转换为 spinal case。Spinal case 是 all-lowercase-words-joined-by-dashes 这种形式的，也就是以连字符连接所有小写单词。
+#### 28.将字符串转换为 spinal case。Spinal case 是 all-lowercase-words-joined-by-dashes 这种形式的，也就是以连字符连接所有小写单词。
 ```
 function spinalCase(str) {
   
@@ -510,7 +459,7 @@ str=str.replace(/([A-Z]+)/g,' $1');
  return str;
 }
 ```
-#### 给一个正整数num，返回小于或等于num的斐波纳契奇数之和。
+#### 29.给一个正整数num，返回小于或等于num的斐波纳契奇数之和。
 
 斐波纳契数列中的前几个数字是 1、1、2、3、5 和 8，随后的每一个数字都是前两个数字之和。
 
@@ -530,11 +479,9 @@ function sumFibs(num) {
     fibo[0] = fibo[1];
     fibo[1] = item;
   }
-
-
 }
 ```
-#### 求小于等于给定数值的质数之和。
+#### 30.求小于等于给定数值的质数之和。
 
 只有 1 和它本身两个约数的数叫质数。例如，2 是质数，因为它只能被 1 和 2 整除。1 不是质数，因为它只能被自身整除。
 
@@ -562,7 +509,7 @@ function sumPrimes(num) {
 }
 
 ```
-#### 找出能被两个给定参数和它们之间的连续数字整除的最小公倍数。
+#### 31.找出能被两个给定参数和它们之间的连续数字整除的最小公倍数。
 
 范围是两个数字构成的数组，两个数字不一定按数字顺序排序。
 
@@ -581,11 +528,9 @@ function smallestCommons(arr) {
     num*=i/fun(num,i);
   }
   return num;
-
-
 }
 ```
-#### 写一个 function，它遍历数组 arr，并返回数组中第一个满足 func 返回值的元素。举个例子，如果 arr 为 [1, 2, 3]，func 为 function(num) {return num === 2; }，那么 find 的返回值应为 2。
+#### 32.写一个 function，它遍历数组 arr，并返回数组中第一个满足 func 返回值的元素。举个例子，如果 arr 为 [1, 2, 3]，func 为 function(num) {return num === 2; }，那么 find 的返回值应为 2。
 
 如果你被卡住了，记得开大招 Read-Search-Ask。尝试与他人结伴编程、编写你自己的代码。
 ```
@@ -601,11 +546,10 @@ function find(arr, func) {
     return undefined;  
   }
   return num;
-
 }
 
 ```
-#### 队友该卖就卖，千万别舍不得。
+#### 33.队友该卖就卖，千万别舍不得。
 
 当你的队伍被敌人包围时，你选择拯救谁、抛弃谁非常重要，如果选择错误就会造成团灭。
 
@@ -655,8 +599,7 @@ for(var i=0;i<arr.length;i++){
 }
 
 ```
-#### 
-对嵌套的数组进行扁平化处理。你必须考虑到不同层级的嵌套。
+#### 34.对嵌套的数组进行扁平化处理。你必须考虑到不同层级的嵌套。
 ```
 function steamroller(arr) {
 var newArr=[];
@@ -673,12 +616,10 @@ var newArr=[];
   fun(arr); 
 
   return newArr;
-
-
 }
 
 ```
-#### 传入二进制字符串，翻译成英语句子并返回。
+#### 35.传入二进制字符串，翻译成英语句子并返回。
 
 二进制字符串是以空格分隔的。
 ```
@@ -693,12 +634,10 @@ function binaryAgent(str) {
     newStr+=String.fromCharCode(arr10[j]);
   }
   return newStr;
-
-
 }
 
 ```
-#### 所有的东西都是真的！
+#### 36.所有的东西都是真的！
 
 完善编辑器中的every函数，如果集合(collection)中的所有对象都存在对应的属性(pre)，并且属性(pre)对应的值为真。函数返回ture。反之，返回false。
 ```
@@ -709,13 +648,10 @@ function check(element, index, array) {
             if (collection.every(check)) {
                 return true;
             } else {
-              return false;}
-
-  
-  
+              return false;}  
 }
 ```
-创建一个计算两个参数之和的 function。如果只有一个参数，则返回一个 function，该 function 请求一个参数然后返回求和的结果。
+#### 37.创建一个计算两个参数之和的 function。如果只有一个参数，则返回一个 function，该 function 请求一个参数然后返回求和的结果。
 
 例如，add(2, 3) 应该返回 5，而 add(2) 应该返回一个 function。
 
@@ -751,6 +687,7 @@ function add(x) {
 5555555555
 1 555 555 5555
 在本节中你会看见如 800-692-7753 or 8oo-six427676;laskdjf这样的字符串. 你的任务就是验证前面给出的字符串是否是有效的美国电话号码. 区号是必须有的. 如果字符串中给出了国家代码, 你必须验证其是 1. 如果号码有效就返回 true ; 否则返回 false.
+```
 function telephoneCheck(str) {
  var newStr = str.replace(/\D/g, '');
   
@@ -759,15 +696,13 @@ function telephoneCheck(str) {
   }
   var reg = /^1? ?\d{3}[- ]?\d{3}[- ]?\d{4}$|^1? ?\(\d{3}\) ?\d{3}-\d{4}$/;
   return reg.test(str);
-
-
-
 } 
+```
 
-创建一个函数，接受两个或多个数组，返回所给数组的 对等差分(symmetric difference) (△ or ⊕)数组.
+#### 38.创建一个函数，接受两个或多个数组，返回所给数组的 对等差分(symmetric difference) (△ or ⊕)数组.
 
 给出两个集合 (如集合 A = {1, 2, 3} 和集合 B = {2, 3, 4}), 而数学术语 "对等差分" 的集合就是指由所有只在两个集合其中之一的元素组成的集合(A △ B = C = {1, 4}). 对于传入的额外集合 (如 D = {2, 3}), 你应该安装前面原则求前两个集合的结果与新集合的对等差分集合 (C △ D = {1, 4} △ {2, 3} = {1, 2, 3, 4}).
-
+```
 function sym(args) {
  var arr = [];
   for(var i = 0; i < arguments.length; i++) {
@@ -801,13 +736,15 @@ function sym(args) {
     return arr1.concat(arr2);
   } 
 }
-设计一个收银程序 checkCashRegister() ，其把购买价格(price)作为第一个参数 , 付款金额 (cash)作为第二个参数, 和收银机中零钱 (cid) 作为第三个参数.
+```
+#### 39.设计一个收银程序 checkCashRegister() ，其把购买价格(price)作为第一个参数 , 付款金额 (cash)作为第二个参数, 和收银机中零钱 (cid) 作为第三个参数.
 
 cid 是一个二维数组，存着当前可用的找零.
 
 当收银机中的钱不够找零时返回字符串 "Insufficient Funds". 如果正好则返回字符串 "Closed".
 
 否则, 返回应找回的零钱列表,且由大到小存在二维数组中.
+```
 function checkCashRegister(price, cash, cid) {
  var change = [];
   var diff = cash - price;
@@ -856,10 +793,10 @@ function checkCashRegister(price, cash, cid) {
     return "Insufficient Funds";
   }
 }
+```
 
-
-依照一个存着新进货物的二维数组，更新存着现有库存(在 arr1 中)的二维数组. 如果货物已存在则更新数量 . 如果没有对应货物则把其加入到数组中，更新最新的数量. 返回当前的库存数组，且按货物名称的字母顺序排列.
-
+#### 40.依照一个存着新进货物的二维数组，更新存着现有库存(在 arr1 中)的二维数组. 如果货物已存在则更新数量 . 如果没有对应货物则把其加入到数组中，更新最新的数量. 返回当前的库存数组，且按货物名称的字母顺序排列.
+```
 function updateInventory(arr1, arr2) {
      for(var i = 0; i < arr1.length; i++) {
     for(var j = 0; j < arr2.length; j++) {
@@ -898,10 +835,11 @@ var newInv = [
     [67, "Bowling Ball"],
     [7, "Toothpaste"]
 ];
-
-把一个字符串中的字符重新排列生成新的字符串，返回新生成的字符串里没有连续重复字符的字符串个数.连续重复只以单个字符为准
+```
+#### 41.把一个字符串中的字符重新排列生成新的字符串，返回新生成的字符串里没有连续重复字符的字符串个数.连续重复只以单个字符为准
 
 例如, aab 应该返回 2 因为它总共有6中排列 (aab, aab, aba, aba, baa, baa), 但是只有两个 (aba and aba)没有连续重复的字符 (在本例中是 a).
+```
 function permAlone(str) {
  var count;
   function getCount() {
@@ -948,8 +886,8 @@ function permAlone(str) {
   return res;
 
 }
-
-让日期区间更友好！
+```
+#### 42.让日期区间更友好！
 
 把常见的日期格式如：YYYY-MM-DD 转换成一种更易读的格式。
 
@@ -958,6 +896,7 @@ function permAlone(str) {
 记住不要显示那些可以被推测出来的信息: 如果一个日期区间里结束日期与开始日期相差小于一年，则结束日期就不用写年份了；在这种情况下，如果月份开始和结束日期如果在同一个月，则结束日期月份也不用写了。
 
 另外, 如果开始日期年份是当前年份，且结束日期与开始日期小于一年，则开始日期的年份也不用写。
+```
 function makeFriendlyDates(arr) {
    var months = [" ","January ", "February ", "March ", "April ", "May ", "June ", "July ", "August ", "September ", "October ", "November ", "December ",];
   var arrs = [];
@@ -1014,13 +953,16 @@ function makeFriendlyDates(arr) {
  }
   return arrs;
 }
-用下面给定的方法构造一个对象.
+```
+
+#### 43.用下面给定的方法构造一个对象.
 
 方法有 getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).
 
 所有有参数的方法只接受一个字符串参数.
 
 所有的方法只与实体对象交互.
+```
 var Person = (function(firstAndLast) {
   var name;
   return function(firstAndLast) {
@@ -1061,8 +1003,8 @@ var Person = (function(firstAndLast) {
     
   };
 })();
-
-返回一个数组，其内容是把原数组中对应元素的平均海拔转换成其对应的轨道周期.
+```
+#### 44.返回一个数组，其内容是把原数组中对应元素的平均海拔转换成其对应的轨道周期.
 
 原数组中会包含格式化的对象内容，像这样 {name: 'name', avgAlt: avgAlt}.
 
@@ -1071,7 +1013,7 @@ var Person = (function(firstAndLast) {
 求得的值应该是一个与其最接近的整数，轨道是以地球为基准的.
 
 地球半径是 6367.4447 kilometers, 地球的GM值是 398600.4418, 圆周率为Math.PI
-
+```
 function orbitalPeriod(arr) {
 var GM = 398600.4418;
   var earthRadius = 6367.4447;
@@ -1095,8 +1037,8 @@ var GM = 398600.4418;
     return res;
   }
 }
-
-找到你的另一半
+```
+#### 45.找到你的另一半
 
 都说优秀的程序员擅长面向对象编程，但却经常找不到另一半，这是为什么呢？因为你总是把自己局限成为一个程序员，没有打开自己的思维。
 
@@ -1114,6 +1056,7 @@ var GM = 398600.4418;
 
 Index	0	1	2	3	4
 Value	7	9	11	13	15
+```
 function pairwise(arr, arg) {
  var val=0; 
     for(var i = 0; i < arr.length; i++ ){  
@@ -1128,5 +1071,5 @@ function pairwise(arr, arg) {
     }
   return val;
 }
-
+```
 
